@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f8f9fa;
+    padding:50px 20px;
+}
+
+.gallery-section{
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+}
+
+.gallery-section h2{
+    font-size:38px;
+    color:#222;
+    margin-bottom:10px;
+}
+
+.heading-line{
+    width:100px;
+    height:4px;
+    background:#00a8ff;
+    margin:0 auto 30px;
+    border-radius:10px;
+}
+
+/* Buttons */
+.filter-buttons{
+    margin-bottom:40px;
+}
+
+.filter-buttons button{
+    padding:12px 25px;
+    margin:5px;
+    border:none;
+    border-radius:30px;
+    background:#e5e5e5;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active{
+    background:#00a8ff;
+    color:white;
+}
+
+/* Gallery */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.gallery-item{
+    break-inside: avoid;
+    width: 100%;
+    display: none;
+}
+
+.gallery-item img{
+    width:100%;
+    height: 300px;
+    object-fit:cover;
+    border-radius: 12px;
+    cursor: pointer;
+    display: block;
+}
+
+.gallery-item img:hover{
+    transform:scale(1.08);
+}
+
+.lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox img{
+    width: 95vw;
+    height: 95vh;
+    object-fit: contain;
+}
+
+.close-btn{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+.image-box{
+    position:relative;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.image-box img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    transition:0.5s ease;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:0.5s ease;
+    pointer-events: none;
+}
+
+.overlay i{
+    color:white;
+    font-size:40px;
+}
+.overlay p{
+    color: white;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.image-box:hover img{
+    transform:scale(1.1);
+}
+
+.image-box:hover .overlay{
+    opacity:1;
+}
+</style>
+
+
+<body>
+
+<section class="gallery-section">
+
+    <h2>Our Project Gallery</h2>
+    <div class="heading-line"></div>
+
+    <div class="filter-buttons">
+        <button class="" onclick="filterSelection('all')">All</button>
+        <button onclick="filterSelection('residential')">Residential Projects</button>
+        <button onclick="filterSelection('commercial')">Outdoor Projects</button>
+        <button onclick="filterSelection('outdoor')">Commercial Projects</button>
+    </div>
+
+    <div class="gallery">
+
+        <!-- Residential -->
+        <div class="gallery-item residential">
+            <div class="image-box">
+            <img src="g1.jpeg" onclick="openImage(this.src)">
+                <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item residential">
+            <div class="image-box">
+            <img src="g2.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item residential">
+            <div class="image-box">
+            <img src="g3.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item residential">
+            <div class="image-box">
+            <img src="g4.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item residential">
+            <div class="image-box">
+            <img src="g10.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item residential">
+            <div class="image-box">
+            <img src="g11.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item residential">
+            <div class="image-box">
+            <img src="g14.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item residential">
+            <div class="image-box">
+            <img src="g16.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+         <div class="gallery-item residential">
+            <div class="image-box">
+            <img src="g17.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Commercial -->
+        <div class="gallery-item commercial">
+            <div class="image-box">
+            <img src="g5.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item commercial">
+            <div class="image-box">
+            <img src="g6.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item commercial">
+            <div class="image-box">
+            <img src="g7.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                    <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item commercial">
+            <div class="image-box">
+            <img src="g8.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                     <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item commercial">
+            <div class="image-box">
+            <img src="g13.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                     <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outdoor -->
+        <div class="gallery-item outdoor">
+            <div class="image-box">
+            <img src="g9.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                     <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item outdoor">
+            <div class="image-box">
+            <img src="g12.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                     <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item outdoor">
+            <div class="image-box">
+            <img src="g15.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                     <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="gallery-item outdoor">
+            <div class="image-box">
+            <img src="g18.jpeg" onclick="openImage(this.src)">
+            <div class="overlay">
+                    <i class="bi bi-eye-fill"></i>
+                     <p>View Project</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+function filterSelection(category){
+
+    let items = document.getElementsByClassName("gallery-item");
+
+    for(let i=0;i<items.length;i++){
+        items[i].style.display = "none";
+    }
+
+    if(category !== ""){
+        for(let i=0;i<items.length;i++){
+
+            if(category === "all"){
+                items[i].style.display = "block";
+            }
+            else 
+            if(items[i].classList.contains(category)){
+                items[i].style.display = "block";
+            }
+        }
+    }
+
+    let btns = document.querySelectorAll(".filter-buttons button");
+    btns.forEach(btn => btn.classList.remove("active"));
+
+    event.target.classList.add("active");
+}
+
+</script>
+
+<script>
+function openImage(src){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightbox-img").src=src;
+}
+
+function closeImage(){
+    document.getElementById("lightbox").style.display="none";
+}
+</script>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-btn" onclick="closeImage()">&times;</span>
+    <img id="lightbox-img">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+</body>
+</html>

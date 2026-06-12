@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
+    <style>
+        .pool-cover{
+    background:url("pool.jpg") center/cover no-repeat;
+    padding:80px 20px;
+}
+
+.content-box{
+    max-width:1000px;
+    margin:auto;
+    background:rgba(255,255,255,0.9);
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:#0d6efd;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+h2{
+    color:#ff6600;
+    margin-top:25px;
+}
+
+.row{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.col{
+    flex:1;
+    min-width:300px;
+}
+
+.app-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.card{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+    </style>
+    <body>
+        <section class="pool-cover">
+    <div class="container">
+        <div class="content-box">
+            <h1>Auditorium and stadium</h1>
+
+            <p>
+                >Our auditorium and stadium tensile roofing solutions are designed to cover large areas while providing excellent protection from sun, rain, and changing weather conditions. These structures offer a modern architectural appearance, durability, and superior performance for public and commercial venues.
+            </p>
+
+            <div class="row">
+                <div class="col">
+                    <h2>Materials We Use</h2>
+                    <ul>
+                       <li>Premium PVC Coated Tensile Fabric</li>
+                        <li>PTFE Membrane Fabric (Optional)</li>
+                        <li>High-Strength Structural Steel</li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h2>Key Features</h2>
+                    <ul>
+                       <li>Large Span Coverage</li>
+                        <li>UV & Weather Protection</li>
+                        <li>High Durability & Strength</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Applications</h2>
+
+            <div class="app-grid">
+                <div class="card"><img src=auditorium.jpeg style="height: 200px;">Indoor and outdoor auditorium</div>
+                <div class="card"><img src=sport.jpeg style="height: 200px;">Sports stadium</div>
+                <div class="card"><img src=cricket.jpeg style="height: 200px;">Cricket grounds</div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+    </body>
+</html>
